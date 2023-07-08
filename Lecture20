@@ -1,0 +1,41 @@
+#include <iostream>
+
+// Binary Tree Node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int value) : data(value), left(nullptr), right(nullptr) {}
+};
+
+int main() {
+    // Creating the nodes of the binary tree
+    Node* root = new Node(1);
+    Node* node2 = new Node(2);
+    Node* node3 = new Node(3);
+    Node* node4 = new Node(4);
+    Node* node5 = new Node(5);
+
+    // Constructing the binary tree
+    root->left = node2;
+    root->right = node3;
+    node2->left = node4;
+    node2->right = node5;
+
+    // Accessing and displaying the data of the binary tree nodes
+    std::cout << "Root: " << root->data << std::endl;
+    std::cout << "Left child of root: " << root->left->data << std::endl;
+    std::cout << "Right child of root: " << root->right->data << std::endl;
+    std::cout << "Left child of node2: " << node2->left->data << std::endl;
+    std::cout << "Right child of node2: " << node2->right->data << std::endl;
+
+    // Deleting the dynamically allocated memory
+    delete root;
+    delete node2;
+    delete node3;
+    delete node4;
+    delete node5;
+
+    return 0;
+}
