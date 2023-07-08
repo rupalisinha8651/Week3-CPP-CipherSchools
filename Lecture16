@@ -1,0 +1,28 @@
+#include <iostream>
+
+int main() {
+    // Dynamic allocation of a single integer
+    int* dynamicInt = new int;
+    *dynamicInt = 10;
+
+    std::cout << "Dynamic Integer: " << *dynamicInt << std::endl;
+
+    // Dynamic allocation of an array
+    int size = 5;
+    int* dynamicArray = new int[size];
+    for (int i = 0; i < size; ++i) {
+        dynamicArray[i] = i + 1;
+    }
+
+    std::cout << "Dynamic Array: ";
+    for (int i = 0; i < size; ++i) {
+        std::cout << dynamicArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Deallocate the dynamic memory
+    delete dynamicInt;
+    delete[] dynamicArray;
+
+    return 0;
+}
