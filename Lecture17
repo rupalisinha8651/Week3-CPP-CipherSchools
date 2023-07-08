@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    // Using a vector container
+    std::vector<int> numbers = {5, 2, 8, 1, 9};
+
+    // Sorting the vector
+    std::sort(numbers.begin(), numbers.end());
+
+    // Displaying the sorted vector
+    std::cout << "Sorted numbers: ";
+    for (const auto& num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    // Finding an element in the vector
+    int target = 8;
+    auto it = std::find(numbers.begin(), numbers.end(), target);
+    if (it != numbers.end()) {
+        std::cout << "Found " << target << " at index " << std::distance(numbers.begin(), it) << std::endl;
+    } else {
+        std::cout << target << " not found" << std::endl;
+    }
+
+    return 0;
+}
