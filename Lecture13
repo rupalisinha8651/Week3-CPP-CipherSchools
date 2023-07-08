@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main() {
+    int num1 = 10;
+    double num2 = 3.14;
+
+    double result = num1 + num2;  // Implicit conversion of int to double
+
+    std::cout << "Result: " << result << std::endl;
+
+    return 0;
+}
