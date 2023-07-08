@@ -1,0 +1,46 @@
+#include <iostream>
+
+// Base class
+class Shape {
+public:
+    void setColor(const std::string& color) {
+        this->color = color;
+    }
+
+    void displayColor() {
+        std::cout << "Color: " << color << std::endl;
+    }
+
+private:
+    std::string color;
+};
+
+// Derived class
+class Circle : public Shape {
+public:
+    void setRadius(double radius) {
+        this->radius = radius;
+    }
+
+    double getArea() {
+        return 3.14 * radius * radius;
+    }
+
+private:
+    double radius;
+};
+
+int main() {
+    // Create an object of the derived class
+    Circle circle;
+
+    // Use inherited member functions from the base class
+    circle.setColor("Red");
+    circle.displayColor();
+
+    // Use member functions specific to the derived class
+    circle.setRadius(5.0);
+    std::cout << "Area: " << circle.getArea() << std::endl;
+
+    return 0;
+}
